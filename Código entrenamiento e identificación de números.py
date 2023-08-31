@@ -2,6 +2,11 @@ import numpy as np
 from keras import layers, models
 from tensorflow.keras.utils import to_categorical
 from keras.datasets import mnist
+import cv2
+import numpy as np
+from keras import models
+import serial
+import time
 
 # Cargar el conjunto de datos
 (train_data, train_labels), (test_data, test_labels) = mnist.load_data()
@@ -37,11 +42,7 @@ model.fit(x_train, y_train, epochs=5, batch_size=128, validation_data=(x_test, y
 model.evaluate(x_test, y_test)
 
 
-import cv2
-import numpy as np
-from keras import models
-import serial
-import time
+
 
 # Cargar el modelo entrenado
 #model = models.load_model('modelo_entrenado.h5')
